@@ -1,4 +1,4 @@
-module github.com/Azure/azure-service-bus-go
+module github.com/hayfever/azure-service-bus-go
 
 go 1.12
 

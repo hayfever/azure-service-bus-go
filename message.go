@@ -390,6 +390,10 @@ func annotationsFromMap(m map[string]interface{}) amqp.Annotations {
 }
 
 func messageFromAMQPMessage(msg *amqp.Message) (*Message, error) {
+	if len(msg.Data) == 0 {
+		return newMessage([]byte{}, msg)
+	}
+
 	return newMessage(msg.Data[0], msg)
 }
 
